@@ -1,0 +1,16 @@
+.navigator{
+    width: 5%;
+    height: 100%;
+    padding-top: 20px;
+    border-right: 1px solid lightgrey;
+
+}
+
+.icon{
+    width: 50%;
+    padding: 20px
+}
+
+.logout{
+    padding-top: 280px
+}

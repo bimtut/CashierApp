@@ -1,0 +1,168 @@
+.mainCart{
+ height: 80%;
+ width: 30%;
+
+}
+.listOfCart{
+    height: 80%;
+    width: 100%;
+    overflow-y: auto;
+}
+.CartItems{
+    width: 100%;
+    overflow-y: auto;
+}
+
+
+
+/* .cartNotif{
+    
+
+} */
+
+.iconCart{
+ width: 250px;
+ display: flex;
+  justify-content:center;
+ margin-left: 50%;
+ transform: translateX(-50%)
+}
+
+.emptyCart{
+    display: flex;
+  justify-content:center;
+  font-size: 14pt;
+
+}
+.subtextCart{
+    color: lightslategray;
+    font-size: 12pt;
+    display: flex;
+  justify-content:center;
+}
+
+/* -----sekarang styling kalo ada belanjaan-------- */
+
+.cartExist{
+  display: flex;
+    padding: 20px;
+}
+
+.listImage{
+  width: 25%;
+    height: 60px;
+    background-color: red
+}
+
+.foodImage{
+  height: 100%;
+  width: 100%;
+  border-radius: 10%
+}
+
+.count{
+  width: 45%;
+  height: 60px;
+  background-color:white;
+  padding-left: 15px;
+  font-weight: 600
+}
+.countName{
+  margin-top: 0px;
+  margin-bottom: -7px
+}
+.counter{
+  background-color: white;
+  font-weight: bold;
+  display: flex;
+}
+.myButton{
+  background-color: rgba(130, 222, 58, 0.2);
+  text-align: center;
+  color: #82DE3A;
+  width: 30px;
+  height: 25px;
+  font-weight: bold;
+  font-size: 12pt;
+  outline: inherit;
+  border: none;
+  border: 2px solid#82DE3A
+}
+.inpud{
+  background-color:white;
+  text-align: center;
+  color: #82DE3A;
+  width: 30px;
+  height: 25px;
+  font-weight: bold;
+  font-size: 12pt;
+  outline: inherit;
+  border-top: 2px solid#82DE3A;
+  border-bottom: 2px solid#82DE3A
+}
+.price{
+  width: 30%;
+  height: 60px;
+}
+.harga{
+  font-weight: 700;
+  font-size: 14pt;
+  margin-top: 30px
+}
+
+/* ---------------yang kalo tombol cancelnya ada----- */
+
+.menuBawah{
+  position: 'fixed';
+  margin: 0px;
+  padding-top: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.total{
+  display: flex;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0px
+}
+
+.textTotal{
+  width: 50%;
+  margin: 0px
+}
+
+.textHarga{
+  width: 50%;
+  text-align: right;
+  margin: 0px;
+  font-weight: 700;
+  font-size: 16pt;
+}
+.ppn{
+  padding-left: 10px;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+
+.checkButton{
+  margin-left:10%;
+  width: 80%;
+  height: 40px;
+  background-color: #57CAD5;
+  cursor: pointer;
+}
+
+.cancel{
+  margin-left:10%;
+  width: 80%;
+  height: 40px;
+  background-color: #F24F8A;
+  cursor: pointer;
+}
+.textCancel{
+  text-align: center;
+  padding: 5%;
+  font-weight: bold;
+  color: white;
+  /* align-content: center */
+}
