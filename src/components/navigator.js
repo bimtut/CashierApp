@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import '../style/navigator.css'
 import swal from 'sweetalert'
 import AddItem from '../components/modalAddItem'
+import ModalLogout from '../components/modalLogout'
 const garpu = require('../images/sendokgarpu.png')
 const notepad = require('../images/notepad.png')
 const add = require('../images/addgreen.png')
 const power = require('../images/powerbutton.png')
+
 
 class Navigator extends Component {
     render() {
@@ -22,7 +24,7 @@ class Navigator extends Component {
                     <AddItem />
                 </a>
                 <a>
-                    <img class='icon logout' src={power}/>
+                    <ModalLogout />
                 </a>
             </div>
         )

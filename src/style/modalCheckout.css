@@ -1,0 +1,172 @@
+.mainModal{
+    height: 500px;
+    width: 500px;
+    border-radius: 15px
+}
+
+.mainHeader{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 35px;
+}
+
+.modalHeader{
+    font-size: 18pt;
+    font-weight: 600;
+    margin-top: 0px;
+}
+
+.textCheckout{
+    font-size: 20pt;
+    font-weight: 600;
+    width: 30%;
+}
+
+.textReceipt{
+    width: 70%;
+    text-align: right;
+    font-weight: 500;
+    font-size: 15pt;
+}
+
+.cashier{
+    margin-left: 10px;
+    margin-top: 0;
+}
+
+.cashierName{
+    margin: 0;
+    font-size: 13pt;    
+    font-weight: 400
+}
+
+.modalBody{
+    height: 40%;
+    overflow-y: auto
+}
+
+.totalPerItem{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 10px;
+    /* background-color: aqua */
+}
+
+.dataItem{
+    width: 65%;
+    display: flex
+}
+.nameItem{
+    /* width: 55%; */
+    font-weight: 500;
+    padding-right: 15px;
+}
+
+.quantityItem{
+    /* width: 10%; */
+    font-weight: 500;
+}
+
+.totalItemPrice{
+    text-align: right;
+    width: 35%;
+    font-weight: 500;
+}
+
+.ppnCheckout{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+    height: 60px;
+    /* background-color: aqua */
+}
+.ppnText{
+    width: 50%;
+    font-weight: 500
+}
+
+.ppnTotal{
+    width: 50%;
+    font-weight: 500;
+    text-align: right;
+}
+
+.subTotal{
+    text-align: right;
+    margin-top: 0;
+    margin-right: 10px;
+    font-weight: 600;
+}
+
+.paymentMethod{
+    text-align: left;
+    margin-top: 0;
+    margin-left: 10px;
+    font-weight: 500;
+    /* background-color: aqua */
+}
+
+.addEmail{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.labelEmail{
+    margin-right: 30px;
+    margin-left: 10px;
+    font-weight: 600;
+    /* width: 30%; */
+}
+
+.inputEmail{
+    margin-right: 20px;
+    height: 28px;
+    width: 76%;
+    padding-left: 10px;
+    justify-content: flex-end
+}
+
+.sendButton{
+    color: antiquewhite;
+    background-color: #57CAD5;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 120px;
+    font-weight: 700;
+    font-size: 12pt;
+    margin-right: 25px;
+}
+
+.printButton{
+    color: antiquewhite;
+    background-color: #F24F8A;
+    border: none;
+    border-radius: 10px;
+    height: 40px;
+    width: 120px;
+    font-weight: 600;
+    font-size: 12pt;
+    margin-left: 25px;
+
+}
+
+.buttons{
+    margin-top: 25px;
+    /* margin-left: 60px; */
+    /* width: 100%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    /* background-color: aquamarine; */
+    margin-left: 50%;
+    transform: translateX(-50%)
+}

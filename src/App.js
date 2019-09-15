@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
 // import logo from './logo.svg';
 // import './App.css';
-import Homepage from '../src/pages/homepage'
+import React, { Component } from 'react';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom'
-import Modal from 'react-responsive-modal'
-import Navbar from '../src/components/navbar'
+import { Provider } from 'react-redux'
+
+import Homepage from '../src/pages/homepage'
+import Login from './pages/login'
+import History from './pages/history'
 
 
 
@@ -18,17 +20,19 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App" >
-        <Router>
-          <Switch>
-            <Route exact path={'/'}>
-              {/* <Navbar /> */}
-              <Homepage />
-              {/* <button>telalalala</button> */}
-            </Route>
-          </Switch>
-        </Router>
-      </div>
+
+      <Provider store={store}>
+
+        <div>
+          <Router>
+            {/* <Switch> */}
+            <Route exact path={'/'} component={Homepage} />
+            <Route exact path={'/login'} component={Login} />
+            <Route exact path={'/history'} component={History} />
+            {/* </Switch> */}
+          </Router>
+        </div>
+      </Provider>
     );
   }
 }

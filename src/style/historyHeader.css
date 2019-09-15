@@ -1,0 +1,52 @@
+.containerHeader {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    border-bottom: 1px solid lightgrey;
+    margin: 0;
+    position: relative;
+    /* background-color: aquamarine */
+}
+
+.imageHistory {
+    width: 5%;
+    /* border-right: 1px solid lightgrey; */
+    /* top: 50%; */
+    /* background-color: blueviolet; */
+
+    /* align-items: center;
+    justify-content: center */
+
+}
+
+.iconHistory{
+    width: 80%;
+    /* height: 35%; */
+    top: 8%;
+    left: 8%;
+    /* align-items: center;
+    justify-content: center; */
+    /* background-color: aqua; */
+    position: relative;
+
+    
+
+}
+
+.nameHistory{
+    width: 95%;
+    margin: auto;
+    /* display: flex; */
+    /* align-items: center */
+    /* text-align: center */
+
+}
+
+.textNameHistory{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    margin: 0;
+    top: 50%;
+    font-size: 18pt
+}

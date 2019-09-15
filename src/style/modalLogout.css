@@ -1,0 +1,42 @@
+.mainLogout{
+    height: 120px;
+    width: 320px;
+    border-radius: 15px
+}
+
+.logoutConfirm{
+    text-align: center
+}
+
+.buttonsLogout{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left: 50%;
+    transform: translateX(-50%)
+}
+
+.logoutButton{
+    color: antiquewhite;
+    background-color: #57CAD5;
+    border: none;
+    border-radius: 10px;
+    height: 45px;
+    width: 200px;
+    font-weight: 700;
+    font-size: 12pt;
+    margin-right: 25px;
+}
+
+.cancelLogout{
+    color: antiquewhite;
+    background-color: #F24F8A;
+    border: none;
+    border-radius: 10px;
+    height: 45px;
+    width: 200px;
+    font-weight: 600;
+    font-size: 12pt;
+    margin-left: 25px;
+}

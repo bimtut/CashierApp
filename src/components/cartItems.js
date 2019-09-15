@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 // import '../style/cartItems.css'
 import '../style/cartItems.css'
+import CheckoutModal from './modalCheckout'
 const coffee = require('../images/coffee.png')
 const botok = require('../images/botok.jpg')
 
@@ -89,10 +90,11 @@ class CartItems extends Component {
                             <span>*Belum termasuk ppn</span>
                         </div>
                         <div className='checkButton'>
-                            <p className='textCancel'>Checkout</p>
+                            {/* <p className='textCancel'>{CheckoutModal}</p> */}
+                            <CheckoutModal/>
                         </div>
                         <div onClick={this.props.cancel} className='cancel'>
-                            <p className='textCancel'>Cancel</p>
+                            <p className='textButton'>Cancel</p>
                         </div>
                     </div>
                 }
