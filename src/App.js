@@ -7,6 +7,7 @@ import { Provider } from 'react-redux'
 import Homepage from '../src/pages/homepage'
 import Login from './pages/login'
 import History from './pages/history'
+import store from '../src/redux/store'
 
 
 

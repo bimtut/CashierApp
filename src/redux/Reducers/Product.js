@@ -50,6 +50,8 @@ const product = (state = initialState, action) => {
                 isFulfilled: true,
                 productList: action.payload.data.result
             };
+        default:
+            return state;
     }
 }
 
