@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal'
 import '../style/modalCheckout.css'
+import {connect} from 'react-redux'
+import moment from 'moment'
+
 
 // placing content in the middle of screen
 const placingModal = {
@@ -20,7 +23,10 @@ class ModalCheckout extends Component {
         super(props)
         this.state = {
             modalOpen: false,
-            isEmail: true
+            isEmail: true,
+            Transaksi: [],
+            receipt: moment().valueOf(),
+            email:''
         }
     }
 
@@ -54,6 +60,12 @@ class ModalCheckout extends Component {
         ]
 
         const total = 700000
+        const nama = 'diisi nama kasir'
+        const ppn = this.props.total * 0.1
+        const totalharga = this.props.total + ppn
+        const itemproduk = this.props.cartItem 
+        console.log(this.props.idProducts)
+
         return (
             <div>
                 {/* trigger modalnya adalah text yang nanti ditaruh di dalam tombol. text dijadikan suatu komponen pemicu modal */}
@@ -70,15 +82,15 @@ class ModalCheckout extends Component {
                             </div>
                             <div class='cashier'>
                                 {/* header kedua berisi nama cashier */}
-                                <label class='cashierName'>Cashier : Kopral Jono</label>
+                                <label class='cashierName'>Cashier : {localStorage.name}</label>
                             </div>
                         </div>
 
                         <div class="modalBody">
                             {/* buat list belanjaan. nge-map dari list belanjaan yang sudah dibuat di list item (diambil dari props) */}
-                            {item &&
-                                item.length > 0 &&
-                                item.map((data, index) => {
+                            {itemproduk &&
+                                itemproduk.length > 0 &&
+                                itemproduk.map((data, index) => {
                                     return (
                                         <div class='totalPerItem' key={index}>
                                             <div class='dataItem'>
@@ -86,7 +98,7 @@ class ModalCheckout extends Component {
                                                 <p class='quantityItem'>{data.quantity}x</p>
                                             </div>
 
-                                            <p class='totalItemPrice'>Rp {data.totalPrice}</p>
+                                            <p class='totalItemPrice'>Rp {data.price * data.quantity}</p>
                                         </div>
                                     )
                                 })}
@@ -95,38 +107,21 @@ class ModalCheckout extends Component {
                             {/* ppn */}
                             {/* posisi ppn di rata kiri masih belum bagus. rapikan */}
                             <p class='ppnText'>PPN 10%</p>
-                            <p class='ppnTotal'>Rp 10000</p>
+                            <p class='ppnTotal'>Rp {ppn}</p>
                         </div>
                         <div>
                             {/* buat naroh total belanja */}
-                            <p class='subTotal'>Total : Rp {total}</p>
+                            <p class='subTotal'>Total : Rp {totalharga}</p>
                             <p class='paymentMethod'>Payment : Cash</p>
                         </div>
                         {/* setelah part ini copas karena belum paham sepenihnya */}
-                        {this.state.isEmail == true ?
-                            <form className='addEmail'>
-                                <label className='labelEmail'>Email</label>
-                                <input
-                                    className='inputEmail'
-                                    type="text"
-                                    name="title"
-                                    id="title"
-                                    placeholder="Email..."
-                                    onChange={(e) => this.setState({ email: e.target.value })} />
-                                <div className='buttons'>
-                                    <button type='submit' class="sendButton" onClick={this.postTran}>Send Email</button>
-                                    <button className='printButton' onClick={this.closeModal} >Print</button>
-
-                                </div>
-                                {/* <button className='sendButton' onClick={this.send}>Send</button>
-                                <button className='printButton' onClick={this.closeModal} >Print</button> */}
-
-                            </form> :
+                        
+                            
                             <div className='buttons'>
                                 <button type='submit' class="sendButton" onClick={this.postTran}>Send Email</button>
                                 <button className='printButton' onClick={this.closeModal} >Print</button>
 
-                            </div>}
+                            </div>
                     </div>
                 </Modal>
             </div>

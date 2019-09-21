@@ -8,7 +8,7 @@ class Header extends Component {
         return(
             <div class='container'>
                 <div class='image'>
-                    <img class='icon'  src={logo} />
+                    <img class='icon'  src={logo} alt='logo' />
                 </div>
                 <div class='name'>
                     <p class='textName'>Food Items</p>
@@ -18,7 +18,7 @@ class Header extends Component {
                 </div>
                 <div class='cart'>
                     <p class='textCart'>cart </p>
-                    <p class='numberCart'>0</p>
+                    <p class='numberCart'>{this.props.totalItem}</p>
                 </div>
             </div>
         )

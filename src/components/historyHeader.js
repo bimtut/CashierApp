@@ -7,7 +7,7 @@ class HistoryHeader extends Component {
         return (
             <div class='containerHeader'>
                 <div class='imageHistory'>
-                    <img class='iconHistory' src={logo} />
+                    <img class='iconHistory' src={logo} alt='burger'/>
                 </div>
                 <div class='nameHistory'>
                     <p class='textNameHistory'>History</p>

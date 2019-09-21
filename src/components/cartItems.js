@@ -6,44 +6,50 @@ const coffee = require('../images/coffee.png')
 const botok = require('../images/botok.jpg')
 
 class CartItems extends Component {
+    state = {
+        cart: this.props.cart,
+        total: null
+    }
     render() {
         const telo = false
-        const item = [
-            {
-                name: 'botok',
-                price: '15000',
-                image: botok
-            },
-            {
-                name: 'sate',
-                price: '20000',
-                image: botok
-            },
-            {
-                name: 'botok',
-                price: '15000',
-                image: botok
-            },
-            {
-                name: 'sate',
-                price: '20000',
-                image: botok
-            },
-            {
-                name: 'botok',
-                price: '15000',
-                image: botok
-            },
-            {
-                name: 'sate',
-                price: '20000',
-                image: botok
-            },
-        ]
+        // const item = [
+        //     {
+        //         name: 'botok',
+        //         price: '15000',
+        //         image: botok
+        //     },
+        //     {
+        //         name: 'sate',
+        //         price: '20000',
+        //         image: botok
+        //     },
+        //     {
+        //         name: 'botok',
+        //         price: '15000',
+        //         image: botok
+        //     },
+        //     {
+        //         name: 'sate',
+        //         price: '20000',
+        //         image: botok
+        //     },
+        //     {
+        //         name: 'botok',
+        //         price: '15000',
+        //         image: botok
+        //     },
+        //     {
+        //         name: 'sate',
+        //         price: '20000',
+        //         image: botok
+        //     },
+        // ]
+        const item = this.props.cart
+        console.log(item)
         return (
             <div class='mainCart'>
                 <div class='listOfCart'>
-                    {telo == true ?
+                    {this.props.cart.length == 0 ?
                         <div class='CartItems'>
                             <div class='cartNotif'>
                                 <img class='iconCart' src={coffee} />
@@ -56,20 +62,20 @@ class CartItems extends Component {
                                 item.length > 0 &&
                                 item.map((data, index) => {
                                     return (
-                                        <div class='cartExist'>
+                                        <div key={index} class='cartExist'>
                                             <div class='listImage'>
                                                 <img class='foodImage' src={data.image} />
                                             </div>
                                             <div class='count'>
                                                 <p class='countName'>{data.name}</p>
                                                 <span class="counter">
-                                                    <p class="myButton" >-</p>
-                                                    <p class="inpud" >0</p>
-                                                    <p class="myButton">+</p>
+                                                    <p class="myButton" onClick={() => { this.props.decrement(index)}}>-</p>
+                                                    <p class="inpud" >{data.quantity}</p>
+                                                    <p class="myButton" onClick={() => { this.props.increment(index)}}>+</p>
                                                 </span>
                                             </div>
                                             <div class='price'>
-                                                <p class='harga'>Rp.200000</p>
+                                                <p class='harga'>Rp {data.price * data.quantity}</p>
                                             </div>
                                         </div>
                                     )
@@ -79,11 +85,11 @@ class CartItems extends Component {
                     }
 
                 </div>
-                {telo == true ? ('') :
+                {this.props.cart == 0 ? ('') :
                     <div className='menuBawah'>
                         <div className='total'>
                             <h3 className='textTotal'>Total : </h3>
-                            <h3 className='textHarga'>Rp. 150000*</h3>
+                            <h3 className='textHarga'>Rp. {this.props.total}*</h3>
                             {/* <h3 className='textHarga'>Rp. {this.props.sum}*</h3> */}
                         </div>
                         <div className='ppn'>
@@ -91,9 +97,13 @@ class CartItems extends Component {
                         </div>
                         <div className='checkButton'>
                             {/* <p className='textCancel'>{CheckoutModal}</p> */}
-                            <CheckoutModal/>
+                            <CheckoutModal 
+                                cartItem = {this.props.cart}
+                                idProducts = {this.props.idProducts}
+                                total = {this.props.total}
+                            />
                         </div>
-                        <div onClick={this.props.cancel} className='cancel'>
+                        <div onClick={this.props.cancelAll} className='cancel'>
                             <p className='textButton'>Cancel</p>
                         </div>
                     </div>

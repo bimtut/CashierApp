@@ -27,6 +27,26 @@ const login = (state = initialState, action) => {
                 isFullfilled: true,
                 loginList: action.payload.data.result
             };
+        case 'LOGOUT_PENDING':
+            return {
+                ...state,
+                isLoading: true,
+                isFullfilled: false,
+                isRejected: false,
+            };
+        case 'LOGOUT_REJECTED':
+            return {
+                ...state,
+                isLoading: false,
+                isRejected: true,
+            };
+        case 'LOGOUT_FULFILLED':
+            return {
+                ...state,
+                isLoading: false,
+                isFullfilled: true,
+                loginList: action.payload.data.result
+            };
         default:
             return state;
     }
