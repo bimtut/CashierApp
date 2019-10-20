@@ -27,7 +27,7 @@ class Homepage extends Component {
         if (!localStorage.name) {
             window.location.href = '/login'
         }
-        console.log('ini ',localStorage)
+        console.log('ini ',localStorage.userid)
         this.setState({ isLoading: true })
         await this.props.dispatch(getProduct())
         this.setState({
@@ -39,6 +39,7 @@ class Homepage extends Component {
     addToCart = (index, val) => {
         const a = this.state.cart.find(data => data.name === val.name)
         const input = {
+            id: val.id,
             name: val.name,
             image: val.image,
             price: val.price,
@@ -116,17 +117,7 @@ class Homepage extends Component {
 
         })
     }
-
-    // deleteFromCart = (index) => {
-    //     this.state.total = Number(this.state.total - this.state.cart[index].price)
-    //     this.state.cart.splice(index, 1)
-    //     this.state.idProducts.splice(index, 1)
-    //     this.setState({
-    //         cart: this.state.cart
-    //     })
-
-    // }
-
+    
     render() {
         // console.log('kkkk', this.state.product)
 

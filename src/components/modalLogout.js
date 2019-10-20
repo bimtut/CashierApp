@@ -37,31 +37,20 @@ class ModalLogout extends Component {
         })
     }
     render() {
+        console.log('ini id dari log out',localStorage.userid)
         const loggingOut = async () => {
             const userid = localStorage.userid
             await this.props.dispatch(logout(userid))
-                .then(
-                    // console.log('metu cuk')
-                    localStorage.removeItem('userid')
-                )
-                .then(
-                    localStorage.removeItem('jwtToken')
-                )
-                .then(
-                    localStorage.removeItem('name')
-                )
-                .then(
-                    swal({
-                        title: "Logout",
-                        text: "Logout Success !!",
-                        icon: "success",
-                        button: "OK"
-                    })
-                )
-                .then(
+            await localStorage.clear()
+
+                // .then(() => {
+
+                // })
+
+                // .then(() => {
                     window.location.href = '/'
-                )
-                .catch(alert('gagal logout'))
+
+                // })
 
 
         }

@@ -21,11 +21,13 @@ const login = (state = initialState, action) => {
                 isRejected: true,
             };
         case 'LOGIN_FULFILLED':
+                console.log('ini data dari action ', action)
+
             return {
                 ...state,
                 isLoading: false,
                 isFullfilled: true,
-                loginList: action.payload.data.result
+                // loginList: action.payload.data.result || 'beha ibu'
             };
         case 'LOGOUT_PENDING':
             return {

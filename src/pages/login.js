@@ -8,20 +8,24 @@ class Login extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            user: []
+            user: [],
+            email:'',
+            password:''
         }
     }
 
     render() {
-        const loginUser = () => {
+        const loginUser = async () => {
             this.state.user.push({
                 email: this.state.email,
                 password: this.state.password
             })
+           await console.log(this.state.user)
+
             // alert(this.state.user)
-            inputToken()
-                .then(window.location.href = '/')
-                .catch(alert('gagal login'))
+            await inputToken()
+            window.location.href = '/'
+                // .catch(alert('gagal login'))
                 
         }
 
@@ -52,7 +56,7 @@ class Login extends Component {
 
 const mapStateToProps = state => {
     return {
-        login: state.login
+        login: state.login.loginList
     };
 };
 export default connect(mapStateToProps)(Login);

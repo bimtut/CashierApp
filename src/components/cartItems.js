@@ -12,38 +12,7 @@ class CartItems extends Component {
     }
     render() {
         const telo = false
-        // const item = [
-        //     {
-        //         name: 'botok',
-        //         price: '15000',
-        //         image: botok
-        //     },
-        //     {
-        //         name: 'sate',
-        //         price: '20000',
-        //         image: botok
-        //     },
-        //     {
-        //         name: 'botok',
-        //         price: '15000',
-        //         image: botok
-        //     },
-        //     {
-        //         name: 'sate',
-        //         price: '20000',
-        //         image: botok
-        //     },
-        //     {
-        //         name: 'botok',
-        //         price: '15000',
-        //         image: botok
-        //     },
-        //     {
-        //         name: 'sate',
-        //         price: '20000',
-        //         image: botok
-        //     },
-        // ]
+
         const item = this.props.cart
         console.log(item)
         return (

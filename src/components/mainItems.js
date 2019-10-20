@@ -1,46 +1,5 @@
 import React, { Component } from 'react'
 import '../style/mainItems.css'
-const botok = require('../images/botok.jpg')
-// const dagangan = [
-//     {
-//         image: botok,
-//         name: 'batok tongkol',
-//         price: 'Rp 15.000'
-//     },
-//     {
-//         image: botok,
-//         name: 'batok tongkol',
-//         price: 'Rp 15.000'
-//     },
-//     {
-//         image: botok,
-//         name: 'batok tongkol',
-//         price: 'Rp 15.000'
-//     }, {
-//         image: botok,
-//         name: 'batok tongkol',
-//         price: 'Rp 15.000'
-//     },
-//     {
-//         image: botok,
-//         name: 'batok tongkol',
-//         price: 'Rp 15.000'
-//     }, {
-//         image: botok,
-//         name: 'batok tongkol',
-//         price: 'Rp 15.000'
-//     },
-//     {
-//         image: botok,
-//         name: 'batok tongkol',
-//         price: 'Rp 15.000'
-//     },
-//     {
-//         image: botok,
-//         name: 'batok tongkol',
-//         price: 'Rp 15.000'
-//     },
-// ]
 
 class mainItems extends Component {
     render() {
@@ -49,9 +8,6 @@ class mainItems extends Component {
         const cart = this.props.cart;
 
         // console.log('cart', cart);
-
-
-        // console.log(data+'jkbkadvbkjbdvkjsbdkjv')
         return (
             <div class='mainItems'>
                 <div class='cardsContainer'>
