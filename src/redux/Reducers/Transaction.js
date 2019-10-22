@@ -1,7 +1,7 @@
 // import transaksi from "../../../../pembanding/reactjs-redux-Cashier/src/Redux/Reducers/Transaksi";
 
 const initialState = {
-    transactionList: [],
+    transactionItems: [],
     isLoading: false,
     isFullfilled: false,
     isRejected: false,
@@ -27,7 +27,7 @@ const transaction = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 isFullfilled: true,
-                transactionList: action.payload.data.result
+                transactionItems: action.payload.data.result
             };
         case 'GET_TRANSACTION_PENDING':
             return {
@@ -47,7 +47,7 @@ const transaction = (state = initialState, action) => {
                 ...state,
                 isLoading: false,
                 isFullfilled: true,
-                transactionList: action.payload.data.result
+                transactionItems: action.payload.data.result
             };
         default:
             return state;

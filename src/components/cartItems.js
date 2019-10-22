@@ -70,6 +70,7 @@ class CartItems extends Component {
                                 cartItem = {this.props.cart}
                                 idProducts = {this.props.idProducts}
                                 total = {this.props.total}
+                                userId = {this.props.userId}
                             />
                         </div>
                         <div onClick={this.props.cancelAll} className='cancel'>

@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
 import Modal from 'react-modal'
 import '../style/modalCheckout.css'
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import moment from 'moment'
 
+import { newTransaction } from "../redux/Action/Transaction";
+
+const series = Math.floor(Math.random() * 1000000)
 
 // placing content in the middle of screen
 const placingModal = {
@@ -26,11 +29,28 @@ class ModalCheckout extends Component {
             isEmail: true,
             Transaksi: [],
             receipt: moment().valueOf(),
-            email:''
+            email: ''
         }
     }
 
-    openModal = () => {
+    openModal = async () => {
+        //new transaction dilakukan di sini ====================================
+        console.log('ini id user nya >> ', this.props.userId)
+        console.log('ini produknya nya >> ', this.props.cartItem)
+        console.log('ini series nya >> ', series)
+        console.log('ini ppn nya >> ', this.props.total * 0.1)
+        console.log('ini total nya >> ', this.props.total + this.props.total * 0.1)
+        const products = []
+        this.props.cartItem.map((product) => {
+            products.push({
+                itemId : product.id,
+                quantity: product.quantity,
+                subtotal: product.quantity*product.price
+            })
+        })
+
+        await this.props.dispatch(newTransaction(this.props.userId, series, this.props.total * 0.1, this.props.total + this.props.total * 0.1, products))
+
         this.setState({
             modalOpen: true
         })
@@ -41,29 +61,13 @@ class ModalCheckout extends Component {
         })
     }
     render() {
-        const item = [
-            {
-                name: 'sasuke',
-                totalPrice: 3000,
-                quantity: 3,
-            },
-            {
-                name: 'naruto',
-                totalPrice: 4000,
-                quantity: 4,
-            },
-            {
-                name: 'tsunade',
-                totalPrice: 5000,
-                quantity: 5,
-            },
-        ]
 
-        const total = 700000
-        const nama = 'diisi nama kasir'
         const ppn = this.props.total * 0.1
         const totalharga = this.props.total + ppn
-        const itemproduk = this.props.cartItem 
+        const itemproduk = this.props.cartItem
+        // ppn = '',
+        // total= '' eh udah ada juga ding ini. hahaha
+
         console.log(this.props.idProducts)
 
         return (
@@ -71,6 +75,8 @@ class ModalCheckout extends Component {
                 {/* trigger modalnya adalah text yang nanti ditaruh di dalam tombol. text dijadikan suatu komponen pemicu modal */}
 
                 <p class='textButton' onClick={this.openModal} > Checkout</p>
+
+
                 <Modal isOpen={this.state.modalOpen} onRequestClose={this.closeModal} style={placingModal}>
                     <div class='mainModal'>
                         <div class='modalHeader'>
@@ -78,7 +84,7 @@ class ModalCheckout extends Component {
                             <div class='mainHeader'>
                                 {/* header utama */}
                                 <label class='textCheckout'>Checkout</label>
-                                <label class='textReceipt'>Receipt no: #8888</label>
+                                <label class='textReceipt'>Receipt no: #{series}</label>
                             </div>
                             <div class='cashier'>
                                 {/* header kedua berisi nama cashier */}
@@ -115,13 +121,13 @@ class ModalCheckout extends Component {
                             <p class='paymentMethod'>Payment : Cash</p>
                         </div>
                         {/* setelah part ini copas karena belum paham sepenihnya */}
-                        
-                            
-                            <div className='buttons'>
-                                <button type='submit' class="sendButton" onClick={this.postTran}>Send Email</button>
-                                <button className='printButton' onClick={this.closeModal} >Print</button>
 
-                            </div>
+
+                        <div className='buttons'>
+                            <button type='submit' class="sendButton" onClick={this.postTran}>Send Email</button>
+                            <button className='printButton' onClick={this.closeModal} >Print</button>
+
+                        </div>
                     </div>
                 </Modal>
             </div>
@@ -129,4 +135,11 @@ class ModalCheckout extends Component {
     }
 }
 
-export default ModalCheckout
+// export default ModalCheckout
+const mapStateToProps = state => {
+    return {
+        transactionItems: state.transaction
+    };
+};
+
+export default connect(mapStateToProps)(ModalCheckout)

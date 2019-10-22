@@ -19,7 +19,8 @@ class Homepage extends Component {
             product: [], //lets see apa aja kegunaan mereka
             cart: [], //isinya list item yang di cart
             total: [], //diisi total harga. tapi masak dari array jadi angka
-            idProducts: []
+            idProducts: [],
+            userId: ''
         }
     }
 
@@ -28,12 +29,15 @@ class Homepage extends Component {
             window.location.href = '/login'
         }
         console.log('ini ',localStorage.userid)
+        const telo = localStorage.userid || 'sempak belanda'
         this.setState({ isLoading: true })
         await this.props.dispatch(getProduct())
         this.setState({
+            userId: telo,
             product: this.props.product.productList,
             isLoading: false
         });
+        console.log('dapet id di state nih >> ', this.state.userId)
     }
 
     addToCart = (index, val) => {
@@ -139,6 +143,7 @@ class Homepage extends Component {
                         cancelAll={this.cancelAll}
                         total={this.state.total}
                         idProducts={this.state.idProducts}
+                        userId={this.state.userId}
                     />
                 </div>
 
