@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'http://localhost:8000';
+const url = 'https://cashereonline.herokuapp.com';
 
 export const newTransaction = (userId, series, ppn, total, transactionItem) => {
     return {

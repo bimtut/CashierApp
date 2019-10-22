@@ -36,12 +36,16 @@ class History extends Component {
                                     return (
 
                                         <div class='cardisinye'>
-                                            <div>
-                                                <p>Transaction date: {data.created_at}</p>
-                                                <p>Cashier: {data.cashier}</p>
-                                            </div>
-                                            <div>
-                                                <p>#{data.series}</p>
+                                            <div class='uppercontainer'>
+                                                <div class='datecashier'>
+                                                    <p class='date'>Transaction date: {data.created_at}</p>
+                                                    <p class='cashiera'>Cashier: {data.cashier}</p>
+                                                </div>
+                                                <div class='series'>
+                                                    <p class='textseries'>#{data.series}</p>
+
+                                                </div>
+
 
                                             </div>
                                             <p>Purchase order :</p>
@@ -55,21 +59,21 @@ class History extends Component {
                                                                 <div class='imagecontainer'>
                                                                     <img src={item.image} class='imagetrans' />
                                                                 </div>
-                                                                <div>
-                                                                    <p>{item.name}</p>
-                                                                    <p>@ Rp {item.price}</p>
-                                                                    <p>jumlah: {item.quantity} pc(s)</p>
+                                                                <div class='datatrans'>
+                                                                    <p class='nametrans'>{item.name}</p>
+                                                                    <p class='pricetrans'>@ Rp {item.price}</p>
+                                                                    <p class='quanttrans'>jumlah: {item.quantity} pc(s)</p>
                                                                 </div>
-                                                                <div>
-                                                                    <p>{item.subtotal}</p>
+                                                                <div class='subtranscontainer'>
+                                                                    <p class='subtrans'>{item.subtotal}</p>
                                                                 </div>
                                                             </div>
 
                                                         )
                                                     })
                                                 }
-                                                <p>{data.ppn}</p>
-                                                <p>{data.total}</p>
+                                                <p class='textkandang'>{data.ppn}</p>
+                                                <p class='textkandang'>{data.total}</p>
                                             </div>
                                         </div>
                                     )

@@ -13,10 +13,10 @@ class Navigator extends Component {
     render() {
         return (
             <div class='navigator'>
-                <a>
+                <a href="/">
                     <img class='icon' src={garpu} />
                 </a>
-                <a>
+                <a href="/history">
                     <img class='icon' src={notepad} />
                 </a>
                 <a>
