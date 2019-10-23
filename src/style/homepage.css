@@ -1,5 +1,6 @@
 .mainClass{
-    height: 600px;
+    height: 650px;
+    overflow: hidden;
 }
 
 .contents{

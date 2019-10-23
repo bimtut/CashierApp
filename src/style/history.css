@@ -1,8 +1,9 @@
-.mainClass{
-    height: 600px;
+.mainClassa{
+    height: 650px;
+    overflow: hidden;
 }
 
-.contents{
+.contentsa{
     width: 100%;
     height: 100%;
     display: flex;
@@ -29,21 +30,52 @@
     width: 65%;
     margin: 18px;
     float: left;
-    background-color: aqua;
+    background-color: rgb(185, 228, 226);
     border-radius: 0.7em;
     padding: 10px;
     
 }
 
+.opening{
+    margin: 0;
+    font-weight: 300;
+    font-size: x-small;
+}
+.openseries{
+    margin: 0;
+    font-size:22pt;
+    font-weight: 500;
+}
+.date{
+    margin: 0;
+    font-size: smaller;
+    font-weight: 300;
+}
+
+.hours{
+    margin: 0;
+    font-weight: 300;
+    font-size: small;
+}
+.purchase{
+    margin-bottom: 4px;
+    margin-top: 8px;
+    font-size: medium;
+}
+
+
+
+
+
 .transItem{
     display: flex;
     flex-direction: row;
     padding: 10px;
-    background-color: deeppink;
-    margin-bottom: 8px;
-    border-radius: 0.6em;
+    background-color: rgb(214, 165, 91);
+    margin-top: 8px;
+    border-radius: 0.7em;
     height: 90px;
-    overflow: hidden;
+    /* overflow: hidden; */
     
 }
 
@@ -55,16 +87,19 @@
     width: 100%;
     height: 100%;
     margin-bottom: 0;
-    border-radius: 0.7em
+    border-radius: 0.7em;
+    object-fit: cover;
 }
 
 .kandangbelanja{
-    border-width: 1px;
+    /* border-width: 1px;
     border-color: black;
-    border-style: solid;
-    background-color: brown;
+    border-style: solid; */
+    background-color: rgb(99, 158, 155);
     border-radius: 0.7em;
     padding: 10px;
+    padding-top: 2px;
+    padding-bottom: 0px;
 
 }
 
@@ -76,32 +111,50 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    background-color: darkgoldenrod;
+    /* background-color: rgb(170, 130, 29); */
+    padding: 0px;
+    border: slategray hidden 1px;
+    border-bottom-style: solid;
+    
 }
 
 .datecashier{
     flex-direction: column;
-    background-color: crimson;
-    /* padding-left: 10px; */
+    margin-bottom: 2px;
 }
 
-.date{
-    font-size: 17pt;
-    font-weight: bold;
-}
+
 
 .cashiera{
     font-size: 13pt;
-    font-weight: bold;
+    font-weight: 400;
     padding: 0px;
+    margin: 0;
+    margin-left: auto;
+    text-align: right;
+    font-size: smaller;
+
+
+}
+.cashiername{
+    margin: 0;
+    /* padding-right: 10; */
+    margin-left: auto;
+    text-align: right;
+    font-size: medium;
+    font-weight: 500;
+
 }
 
 .series{
     /* margin-right: 0px; */
-    /* width: 30%; */
+    width: auto;
     margin-left: auto;
-    padding-right: 10;
-    background-color: darkred;
+    padding-right: 10px;
+    /* background-color: darkred; */
+    /* justify-self: flex-end; */
+    align-self: flex-end;
+    /* display: flex; */
 }
 .textseries{
     font-size: 20pt;
@@ -112,18 +165,102 @@
     padding-left: 10px;
     /* padding-top: 0; */
     /* margin-top: 0px; */
-    background-color: darksalmon;
+    /* background-color: darksalmon; */
     /* align-content: flex-start;
     text-align: start; */
 
 
 }
 .nametrans{
-    font-size: 17pt;
-    background-color: darkseagreen;
+    margin: 0;
+    font-size: 18pt;
+    font-weight: 700;
+    /* background-color: darkseagreen; */
 }
-.pricetrans{}
-.quanttrans{}
+.pricetrans{
+    margin: 0;
+    margin-top: 5px;
+    /* background-color: darkseagreen; */
+    font-size: small;
+    font-weight: lighter;
+}
+.quanttrans{
+    /* background-color: darkseagreen; */
+    font-weight: 500;
+    font-size: small;
+}
 
-.subtranscontainer{}
-.subtrans{}
+.subtranscontainer{
+    margin-left: auto;
+    font-weight: 500;
+    font-size: 21pt;
+    align-self: center;
+}
+.subtrans{
+    margin: 0;
+}
+.subtotaltext{
+    font-size: x-small;
+    margin: 0;
+    margin-bottom: 5px;
+    font-weight: 400;
+
+}
+.kandangjadi{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.texttotal{
+    /* flex-direction: row;
+    display: flex; */
+    font-size: 23pt;
+    font-weight: 500;
+    padding: 0;
+    padding-right: 10px;
+    /* margin-bottom: 5px;
+    margin-left: auto; */
+}
+.totalfinal{
+    width: fit-content;
+    /* margin-left: auto; */
+    /* background-color: lawngreen; */
+    display: flex;
+    flex-direction: column;
+    /* height: fit-content; */
+    /* align-content: center; */
+    justify-content: center;
+    padding-right: 10px ;
+    padding-top: 5px;
+}
+.textkandang{
+    /* margin-left: auto;
+    margin-right: 0px; */
+    /* justify-self: flex-end; */
+    flex-direction: row;
+    display: flex;
+    font-size: x-small;
+    font-weight: 400;
+    padding: 0;
+    margin-bottom: 5px;
+    margin-left: auto;
+}
+
+.ppnfinal{
+    margin: 0;
+}
+.ppncount{
+    /* font-size: larger; */
+    font-weight: 500;
+    /* font-size: small; */
+    margin: 0;
+}
+.itsendhere{
+    font-size: 26pt;
+    font-weight: 500;
+    margin: 0;
+    display: flex;
+    /* flex: ; */
+    margin-left: auto;
+}
+

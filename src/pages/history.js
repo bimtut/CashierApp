@@ -4,6 +4,7 @@ import Navigator from '../components/navigator'
 import { connect } from 'react-redux'
 import { getTransaction } from "../redux/Action/Transaction";
 import '../style/history.css'
+import Moment from 'moment';
 
 class History extends Component {
     constructor(props) {
@@ -23,9 +24,9 @@ class History extends Component {
     }
     render() {
         return (
-            <div class='mainClass'>
+            <div class='mainClassa'>
                 <HistoryHeader />
-                <div class='contents'>
+                <div class='contentsa'>
                     <Navigator />
                     <div class='isinye'>
                         {/* isi pake history item */}
@@ -33,22 +34,27 @@ class History extends Component {
                             {this.state.historyList &&
                                 this.state.historyList.length > 0 &&
                                 this.state.historyList.map((data, index) => {
+                                    const date = Date(data.created_at)
                                     return (
 
                                         <div class='cardisinye'>
                                             <div class='uppercontainer'>
                                                 <div class='datecashier'>
-                                                    <p class='date'>Transaction date: {data.created_at}</p>
-                                                    <p class='cashiera'>Cashier: {data.cashier}</p>
+                                                    <p class='opening'>transaction number</p>
+                                                    <p class='openseries'>#{data.series}</p>
+                                                    <p class='date'>{Moment(date).format('DD MMM YYYY')}</p>
+                                                    <p class='hours'>{Moment(date).format('h:mm a')}</p>
+
+
                                                 </div>
                                                 <div class='series'>
-                                                    <p class='textseries'>#{data.series}</p>
-
+                                                    <p class='cashiera'>cashier:</p>
+                                                    <p class='cashiername'> {data.cashier}</p>
                                                 </div>
 
 
                                             </div>
-                                            <p>Purchase order :</p>
+                                            <p class='purchase'>Purchase order(s) :</p>
 
                                             <div class='kandangbelanja'>
 
@@ -61,10 +67,11 @@ class History extends Component {
                                                                 </div>
                                                                 <div class='datatrans'>
                                                                     <p class='nametrans'>{item.name}</p>
-                                                                    <p class='pricetrans'>@ Rp {item.price}</p>
+                                                                    <p class='pricetrans'>@Rp {item.price}</p>
                                                                     <p class='quanttrans'>jumlah: {item.quantity} pc(s)</p>
                                                                 </div>
                                                                 <div class='subtranscontainer'>
+                                                                    <p class='subtotaltext'>subtotal</p>
                                                                     <p class='subtrans'>{item.subtotal}</p>
                                                                 </div>
                                                             </div>
@@ -72,8 +79,20 @@ class History extends Component {
                                                         )
                                                     })
                                                 }
-                                                <p class='textkandang'>{data.ppn}</p>
-                                                <p class='textkandang'>{data.total}</p>
+                                                <div class='kandangjadi'>
+                                                    <div class='texttotal'>
+                                                        <p>TOTAL: </p>
+                                                    </div>
+                                                    <div class='totalfinal'>
+                                                        <div>
+                                                            <p class='itsendhere'>{data.total}</p>
+                                                        </div>
+                                                        <div class='textkandang'>
+                                                            <p class='ppnfinal'>*ppn 10% : </p>
+                                                            <p class='ppncount'>{data.ppn}</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     )
